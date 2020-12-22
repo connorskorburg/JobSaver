@@ -13,6 +13,7 @@ from .models import *
 from .controllers.user_controller import *
 from .controllers.application_controller import *
 from .controllers.interview_controller import *
+from .controllers.connection_controller import *
 # Create your views here.
   
       
@@ -54,6 +55,18 @@ INTERVIEW:
   "phone_number": "1-234-657-4564",
   "comment": "Interview for full stack developer",
   "user_being_interviewed": 1
+}
+
+
+CONNECTION:
+
+{
+    "firstName": "Ken",
+    "lastName": "Davidson",
+    "email": "ken@test.com",
+    "website_link": "https://ken.test.com",
+    "linkedin_link": "https://linkedin.com/in/kendavidson",
+    "user_connected": 1
 }
 
 '''

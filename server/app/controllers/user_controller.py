@@ -78,3 +78,14 @@ def userInterviews(request, id):
     return JsonResponse(interview_serializer.data, safe=False, status=status.HTTP_302_FOUND)
   except:
     return JsonResponse({'message': 'Bad Request'} ,status=status.HTTP_400_BAD_REQUEST)
+  
+# fetch all connections for specific user
+@api_view(['GET'])
+def userConnections(request, id):
+  try:
+    user = User.objects.get(id=id)
+    connections = Connection.objects.filter(user_connected=user)
+    connection_serializer = ConnectionSerializer(connections, many=True)
+    return JsonResponse(connection_serializer.data, safe=False, status=status.HTTP_302_FOUND)
+  except:
+    return JsonResponse({'message': 'Bad Request'} ,status=status.HTTP_400_BAD_REQUEST)

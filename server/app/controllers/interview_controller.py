@@ -41,3 +41,24 @@ def updateDeleteGetInterviewByID(request, id):
       return JsonResponse(serialized_interview.data, status=status.HTTP_302_FOUND)
     except:
       return JsonResponse({'message': 'Bad Request'} ,status=status.HTTP_400_BAD_REQUEST)
+  if request.method == 'DELETE':
+    try:
+      interview.delete()
+      return JsonResponse({'message': 'interview has been deleted'}, status=status.HTTP_202_ACCEPTED)
+    except:
+      return JsonResponse({'message': 'Bad Request'} ,status=status.HTTP_400_BAD_REQUEST)
+  if request.method == 'PATCH':
+    try:
+      interview_data = JSONParser().parse(request)
+      interview_serializer = InterviewSerializer(Interview, data=interview_data, partial=True)
+      if interview_serializer.is_valid():
+        try:
+          interview.save()
+          return JsonResponse(interview_serializer.data, status=status.HTTP_202_ACCEPTED)    
+        except:
+          return JsonResponse({'message': 'Bad Request'} ,status=status.HTTP_400_BAD_REQUEST)
+    except:
+      return JsonResponse({'message': 'Bad Request'} ,status=status.HTTP_400_BAD_REQUEST)
+  else:
+    return JsonResponse({'message': 'Bad Request'} ,status=status.HTTP_400_BAD_REQUEST)
+    
