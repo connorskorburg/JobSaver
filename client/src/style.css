@@ -1,0 +1,20 @@
+/* animation and setup for hamburger icon */
+/* link: https://w3bits.com/animated-menu-icon-css/ */
+.nav-icon:after, 
+.nav-icon:before, 
+.nav-icon div {
+  background-color: #fff;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all 250ms ease-in-out;
+}
+
+.nav-icon:hover div,
+.nav-icon:hover:after,
+.nav-icon:hover:before {
+  transition: all 350ms ease-in-out;
+  transform: scaleX(0.75) rotate(180deg);
+}

@@ -1,9 +1,14 @@
 import React from 'react';
-import Navbar from '../src/components/reusables/Navbar';
+import DashContainer from './components/layout/Dashboard';
+import SideNav from './components/layout/SideNav';
+import './style.css';
 
 const App = () => {
   return (
-    <Navbar />
+    <main className="flex min-h-screen">
+      <SideNav />
+      <DashContainer />
+    </main>
   );
 }
 
