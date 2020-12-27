@@ -15,6 +15,6 @@
 .nav-icon:hover div,
 .nav-icon:hover:after,
 .nav-icon:hover:before {
-  transition: all 350ms ease-in-out;
+  transition: all 400ms ease-in-out;
   transform: scaleX(0.75) rotate(180deg);
 }
