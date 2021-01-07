@@ -5,7 +5,7 @@ import './style.css';
 
 const App = () => {
   return (
-    <main className="flex min-h-screen">
+    <main className="flex min-h-screen overflow-y-hidden">
       <SideNav />
       <DashContainer />
     </main>

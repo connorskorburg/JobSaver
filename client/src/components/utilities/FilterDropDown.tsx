@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, CSSProperties } from 'react';
 
 const FilterDropDown = () => {
   const [value, setValue] = useState('application');
@@ -22,15 +22,15 @@ const FilterDropDown = () => {
         <i className="fas fa-plus-circle text-2xl font-bold"></i>        
       </button>
       {showForm &&
-        <section style={popUpStyle} className="absolute inset-0 flex justify-center">
-          <form onSubmit={handleSubmit} className="bg-white self-start mt-10 p-10 rounded-md shadow-lg">
+        <section style={popUpStyle} className="fixed inset-0 flex justify-center">
+          <form onSubmit={handleSubmit} className="bg-white self-start my-10 p-10 rounded-md shadow-lg">
             <h1 className="inline-block">New </h1>
             <select onChange={handleChange} name="model" className="focus:outline-none border-none bg-white">
               <option className="bg-gray-300" value="application">Application</option>
               <option className="bg-gray-300" value="interview">Interview</option>
               <option className="bg-gray-300" value="network">Network</option>
             </select>
-            <i onClick={() => setShowForm(!showForm)} className="text-lg ml-1 far fa-times-circle"></i>
+          <i onClick={() => setShowForm(!showForm)} className="mr-auto text-white text-xl bg-red-400 rounded-md px-2 ml-1 far fa-times-circle transition delay-50 duration-500 cursor-pointer focus:outline-none hover:bg-red-600"></i>
             {value === 'application' && 
               <article>
                 <input type="text" className="focus:outline-none" style={inputStyle} placeholder="Title" />
@@ -59,7 +59,7 @@ const FilterDropDown = () => {
                 <input type="url" className="focus:outline-none" style={inputStyle} placeholder="Linkedin Link" />
               </article>
             }
-            <button className="rounded-md shadow-sm font-bold w-full block py-2 bg-blue-500 text-white">Submit</button>
+            <button className="rounded-md shadow-sm font-bold w-full block py-2 bg-blue-500 text-white transition delay-50 duration-500 cursor-pointer focus:outline-none hover:bg-blue-700">Submit</button>
           </form>
         </section>
       }
@@ -67,12 +67,13 @@ const FilterDropDown = () => {
   );
 };
 
-const popUpStyle = {
+const popUpStyle: CSSProperties = {
   backgroundColor: "rgba(0,0,0,0.75)",
   minHeight: '100vh',
-  minWidth: '100%'
+  minWidth: '100%',
+  overflowY: 'scroll',
 }
-const inputStyle = {
+const inputStyle: CSSProperties = {
   fontSize: '1rem',
   padding: '0.5rem',
   display: 'block',

@@ -5,7 +5,7 @@ import SearchBar from '../utilities/SearchBar';
 
 const Dashboard = () => {
   return (
-    <section className="w-5/6 transition-all">
+    <section className="w-5/6 transition-all overflow-y-hidden">
       <Navbar />
       <article className="flex">
         <SearchBar />
