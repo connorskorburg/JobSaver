@@ -18,3 +18,19 @@
   transition: all 400ms ease-in-out;
   transform: scaleX(0.75) rotate(180deg);
 }
+
+.bottom-nav {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .side-nav {
+    display: none;
+  }
+  .dash {
+    width: 100%;
+  }
+  .bottom-nav {
+    display: block;
+  }
+}
