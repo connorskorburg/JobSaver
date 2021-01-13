@@ -18,7 +18,12 @@
   transition: all 400ms ease-in-out;
   transform: scaleX(0.75) rotate(180deg);
 }
-
+th {
+  padding: 0.75rem;
+}
+td {
+  padding: 0.5rem;
+}
 .bottom-nav {
   display: none;
 }
