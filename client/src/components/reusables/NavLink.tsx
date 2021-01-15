@@ -1,4 +1,5 @@
 import React from 'react';
+import { showDashboard } from '../../redux/Users/users.actions'
 
 interface NavLinkInterface {
   name: string;
@@ -6,10 +7,15 @@ interface NavLinkInterface {
   type: string;
 }
 
+const handleClick = (clickType: string) => {
+  showDashboard();
+}
+
 const NavLink = ({name, active, type}: NavLinkInterface) => {
   
   return (
     <button
+      onClick={() => handleClick(name)}
       className={`py-8 font-bold transition delay-50 duration-500 focus:outline-none
                 ${active && 'text-white bg-gray-600 hover:text-gray-200 hover:bg-gray-800'}
                 ${active === false && 'text-gray-200 bg-gray-800 hover:text-white hover:bg-gray-600'}
