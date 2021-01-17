@@ -28,6 +28,9 @@ td {
   display: none;
 }
 
+.w-big { width: 100%;}
+.w-small { width: 5%; }
+
 @media screen and (max-width: 1000px) {
   .side-nav {
     display: none;

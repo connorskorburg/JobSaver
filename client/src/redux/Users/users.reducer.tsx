@@ -1,13 +1,14 @@
-import { GET_USER } from './users.types';
+import { SHOW_DASHBOARD } from './users.types';
 
 const INITIAL_STATE = {
   user: {},
+  sideNavShowing: true,
 };
 const reducer = (state = INITIAL_STATE, action: any) => {
   switch (action.type) {
-    case GET_USER:
+    case SHOW_DASHBOARD:
       return {
-        ...state, user: {"name": "Bob"},
+        ...state, sideNavShowing: !state.sideNavShowing,
       };
     default: return state;
   }
