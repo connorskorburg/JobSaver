@@ -1,1 +1,2 @@
 export const SHOW_DASHBOARD = 'SHOW_DASHBOARD';
+export const ACTIVE_CONTENT = 'ACTIVE_CONTENT';

@@ -10,32 +10,38 @@ const DashTable = ({type}: PropTypes ) => {
     <table className="p-5 w-full text-center">
       {type === 'Applications' && 
       <thead className="bg-green-500 text-white">
-        <th className="w-1/12">Date Applied</th>
-        <th className="w-1/6">Title</th>
-        <th className="w-1/12">Company</th>
-        <th className="w-1/6">Description</th>
-        <th className="w-1/12">Application Link</th>
-        <th className="w-1/12">Company Link</th>
+        <tr>
+          <th className="w-1/12">Date Applied</th>
+          <th className="w-1/6">Title</th>
+          <th className="w-1/12">Company</th>
+          <th className="w-1/6">Description</th>
+          <th className="w-1/12">Application Link</th>
+          <th className="w-1/12">Company Link</th>
+        </tr>
       </thead>
       }
       {type === 'Interviews' && 
       <thead className="bg-blue-500 text-white">  
-        <th>Interview Date</th>
-        <th>Company</th>
-        <th>Interviewer Name</th>
-        <th>comment</th>
-        <th>Phone Number</th>
-        <th>Email</th>
+        <tr>
+          <th>Interview Date</th>
+          <th>Company</th>
+          <th>Interviewer Name</th>
+          <th>comment</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+        </tr>
       </thead>
       }
       {type === 'Network' && 
       <thead className="bg-indigo-500 text-white ">  
-        <th>Date Connected</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Linkedin Link</th>
-        <th>Website Link</th>
+        <tr>
+          <th>Date Connected</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Linkedin Link</th>
+          <th>Website Link</th>
+        </tr>
       </thead>
       }
   

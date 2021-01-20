@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 
 const Dashboard = () => {
   const isShowing = useSelector((state: any) => state.sideNavShowing);
-
+  const { applications, interviews, network} = useSelector((state: any) => state.activeContent);
   return (
     <section className={`${isShowing ? "w-5/6" : "w-big"} dash transition-all delay-100 overflow-y-hidden"`}>
       <Navbar />
@@ -16,9 +16,9 @@ const Dashboard = () => {
         <SearchBar />
         <FilterDropDown />
       </article>
-      <DashTable type="Applications" />
-      {/* <DashTable type="Interviews" /> */}
-      {/* <DashTable type="Network" /> */}
+      { applications && <DashTable type="Applications" /> }
+      { interviews && <DashTable type="Interviews" /> }
+      { network && <DashTable type="Network" /> }
       <BottomNav />
     </section>
   );
