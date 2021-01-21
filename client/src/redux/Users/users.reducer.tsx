@@ -18,7 +18,7 @@ const reducer = (state = INITIAL_STATE, action: any) => {
     case ACTIVE_CONTENT:
       return {
         ...state,
-        activeContent: action.payload
+        // activeContent: action.payload
       };
     default: return state;
   }
