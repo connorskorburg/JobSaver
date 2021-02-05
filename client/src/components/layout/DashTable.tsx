@@ -46,7 +46,11 @@ const DashTable = ({type}: PropTypes ) => {
       }
   
       <tbody>
-        <tr className="border-b-2 border-green-500">
+        <tr className={`border-b-2 
+                      ${type === 'Applications' && `border-green-500`}
+                      ${type === 'Interviews' && `border-blue-500`}
+                      ${type === 'Network' && `border-indigo-500`}`}
+        >
           <td>12/12/2020</td>
           <td>Full Stack Developer</td>
           <td>Facebook</td>
@@ -62,7 +66,11 @@ const DashTable = ({type}: PropTypes ) => {
             </a>
           </td>
         </tr>
-        <tr className="border-b-2 border-green-500">
+        <tr className={`border-b-2 
+                      ${type === 'Applications' && `border-green-500`}
+                      ${type === 'Interviews' && `border-blue-500`}
+                      ${type === 'Network' && `border-indigo-500`}`}
+        >
           <td>12/12/2020</td>
           <td>Full Stack Developer</td>
           <td>Facebook</td>

@@ -24,13 +24,17 @@ const FilterDropDown = () => {
       {showForm &&
         <section style={popUpStyle} className="fixed inset-0 flex justify-center">
           <form onSubmit={handleSubmit} className="bg-white self-start my-10 p-10 rounded-md shadow-lg">
-            <h1 className="inline-block">New </h1>
-            <select onChange={handleChange} name="model" className="focus:outline-none border-none bg-white">
-              <option className="bg-gray-300" value="application">Application</option>
-              <option className="bg-gray-300" value="interview">Interview</option>
-              <option className="bg-gray-300" value="network">Network</option>
-            </select>
-          <i onClick={() => setShowForm(!showForm)} className="mr-auto text-white text-xl bg-red-400 rounded-md px-2 ml-1 far fa-times-circle transition delay-50 duration-500 cursor-pointer focus:outline-none hover:bg-red-600"></i>
+            <div className='flex'>
+              <article>
+                <h1 className="inline-block">New </h1>
+                <select onChange={handleChange} name="model" className="focus:outline-none border-none bg-white">
+                  <option className="bg-gray-300" value="application">Application</option>
+                  <option className="bg-gray-300" value="interview">Interview</option>
+                  <option className="bg-gray-300" value="network">Network</option>
+                </select>
+              </article>
+              <i onClick={() => setShowForm(!showForm)} className="ml-auto text-white text-xl bg-red-400 rounded-xl px-2 py-1 ml-1 far fa-times-circle transition delay-50 duration-500 cursor-pointer focus:outline-none hover:bg-red-600"></i>
+            </div>
             {value === 'application' && 
               <article>
                 <input type="text" className="focus:outline-none" style={inputStyle} placeholder="Title" />
