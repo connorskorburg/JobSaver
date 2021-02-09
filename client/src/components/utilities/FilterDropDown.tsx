@@ -16,6 +16,8 @@ const FilterDropDown = () => {
     e.preventDefault();
   }
 
+  const inputFocus = 'focus:outline-none focus:border-bottom-4 focus:border-gray-500 border-gray-300 border-b-2'
+
   return (
     <>
       <button onClick={() => setShowForm(!showForm)} className="bg-gray-800 focus:outline-none w-1/6 text-white transition delay-50 duration-500 focus:outline-none hover:bg-gray-600">
@@ -37,30 +39,30 @@ const FilterDropDown = () => {
             </div>
             {value === 'application' && 
               <article>
-                <input type="text" className="focus:outline-none" style={inputStyle} placeholder="Title" />
-                <input type="text" className="focus:outline-none" style={inputStyle} placeholder="Company Name" />
-                <input type="url" className="focus:outline-none" style={inputStyle} placeholder="Application Link" />
-                <input type="url" className="focus:outline-none" style={inputStyle} placeholder="Company Link" />
-                <input type="date" className="focus:outline-none" style={inputStyle} placeholder="Date Applied" />
-                <textarea className="focus:outline-none" style={inputStyle} placeholder="Description" />
+                <input type="text" className={inputFocus} style={inputStyle} placeholder="Title" />
+                <input type="text" className={inputFocus} style={inputStyle} placeholder="Company Name" />
+                <input type="url" className={inputFocus} style={inputStyle} placeholder="Application Link" />
+                <input type="url" className={inputFocus} style={inputStyle} placeholder="Company Link" />
+                <input type="date" className={inputFocus} style={inputStyle} placeholder="Date Applied" />
+                <textarea className={inputFocus} style={inputStyle} placeholder="Description" />
               </article>
             }
             {value === 'interview' && 
               <article>
-                <input type="text" className="focus:outline-none" style={inputStyle} placeholder="Company Name" />
-                <input type="text" className="focus:outline-none" style={inputStyle} placeholder="Interviewer Name" />
-                <input type="date" className="focus:outline-none" style={inputStyle} placeholder="Interview Date" />
-                <input type="text" className="focus:outline-none" style={inputStyle} placeholder="Phone Number" />
-                <textarea className="focus:outline-none" style={inputStyle} placeholder="Comment" />
+                <input type="text" className={inputFocus} style={inputStyle} placeholder="Company Name" />
+                <input type="text" className={inputFocus} style={inputStyle} placeholder="Interviewer Name" />
+                <input type="date" className={inputFocus} style={inputStyle} placeholder="Interview Date" />
+                <input type="text" className={inputFocus} style={inputStyle} placeholder="Phone Number" />
+                <textarea className={inputFocus} style={inputStyle} placeholder="Comment" />
               </article>
             }
             {value === 'network' && 
               <article>
-                <input type="text" className="focus:outline-none" style={inputStyle} placeholder="First Name" />
-                <input type="text" className="focus:outline-none" style={inputStyle} placeholder="Last Name" />
-                <input type="email" className="focus:outline-none" style={inputStyle} placeholder="Email" />
-                <input type="url" className="focus:outline-none" style={inputStyle} placeholder="Website Link" />
-                <input type="url" className="focus:outline-none" style={inputStyle} placeholder="Linkedin Link" />
+                <input type="text" className={inputFocus} style={inputStyle} placeholder="First Name" />
+                <input type="text" className={inputFocus} style={inputStyle} placeholder="Last Name" />
+                <input type="email" className={inputFocus} style={inputStyle} placeholder="Email" />
+                <input type="url" className={inputFocus} style={inputStyle} placeholder="Website Link" />
+                <input type="url" className={inputFocus} style={inputStyle} placeholder="Linkedin Link" />
               </article>
             }
             <button className="rounded-md shadow-sm font-bold w-full block py-2 bg-blue-500 text-white transition delay-50 duration-500 cursor-pointer focus:outline-none hover:bg-blue-700">Submit</button>
@@ -82,7 +84,6 @@ const inputStyle: CSSProperties = {
   padding: '0.5rem',
   display: 'block',
   margin: '1rem 0',
-  borderBottom: '2px solid #ccc',
 }
 
 export default FilterDropDown;
