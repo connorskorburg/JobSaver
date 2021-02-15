@@ -1,20 +1,21 @@
 import React, { useState, CSSProperties } from 'react';
+import { Formik } from 'formik';
 
 const FilterDropDown = () => {
   const [value, setValue] = useState('application');
   const [showForm, setShowForm] = useState(false);
 
-  const handleChange = (e:any) => {
-    console.log(e.target.value);
-    setValue(e.target.value);
-    e.preventDefault();
-  }
+  // const handleChange = (e:any) => {
+    // console.log(e.target.value);
+    // setValue(e.target.value);
+    // e.preventDefault();
+  // }
 
-  const handleSubmit = (e:any) => {
-    console.log(e.target);
-    console.log(e);
-    e.preventDefault();
-  }
+  // const handleSubmit = (e:any) => {
+    // console.log(e.target);
+    // console.log(e);
+    // e.preventDefault();
+  // }
 
   const applicationInputFocus = 'focus:outline-none focus:border-bottom-4 focus:border-green-500 border-gray-300 border-b-2'
   const interviewInputFocus = 'focus:outline-none focus:border-bottom-4 focus:border-blue-500 border-gray-300 border-b-2'
@@ -28,11 +29,11 @@ const FilterDropDown = () => {
       </button>
       {showForm &&
         <section style={popUpStyle} className="fixed inset-0 flex justify-center">
-          <form onSubmit={handleSubmit} className="bg-white self-start my-10 p-10 rounded-md shadow-lg">
+          <form className="bg-white self-start my-10 p-10 rounded-md shadow-lg">
             <div className='flex'>
               <article>
                 <h1 className="inline-block">New </h1>
-                <select onChange={handleChange} name="model" className="focus:outline-none border-none bg-white">
+                <select name="model" className="focus:outline-none border-none bg-white">
                   <option className="bg-gray-300" value="application">Application</option>
                   <option className="bg-gray-300" value="interview">Interview</option>
                   <option className="bg-gray-300" value="network">Network</option>
